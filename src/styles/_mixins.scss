@@ -1,0 +1,26 @@
+@use "./colors";
+
+@mixin font($font-weight, $font-size, $color: colors.$text-main) {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin font-caveat($font-weight, $font-size) {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: $font-weight;
+  font-style: normal;
+  font-size: $font-size;
+  color: colors.$text-main;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: normal) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

@@ -1,0 +1,38 @@
+### General ###
+.env
+
+# Ignore IDE-specific build folders but allow in source dirs
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### Node.js / Vite Frontend ###
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+### IDEs ###
+
+## VS Code
+.vscode/
+!.vscode/extensions.json
+
+## IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+
+### Debug Logs ###
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local Netlify folder
+.netlify
