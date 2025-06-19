@@ -1,0 +1,7 @@
+@use "../../styles/mixins";
+
+.section {
+  grid-area: projects;
+  @include mixins.flex(column, $align: center);
+  width: 100%;
+}

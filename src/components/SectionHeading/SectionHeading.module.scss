@@ -1,0 +1,7 @@
+@use "../../styles/mixins";
+
+.heading {
+  @include mixins.font(700, 2rem);
+  font-style: italic;
+  text-align: center;
+}

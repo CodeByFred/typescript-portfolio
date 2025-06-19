@@ -1,0 +1,35 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.about {
+  grid-area: about;
+  height: 45vh;
+  @include mixins.flex(column, $align: center);
+  &__container {
+    @include mixins.flex($justify: center, $align: center);
+
+    height: 70%;
+    width: 90%;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+  }
+  &__container-text {
+    width: 60%;
+    @include mixins.flex(column, $justify: center);
+  }
+  &__heading {
+    @include mixins.font(700, 2rem);
+    font-style: italic;
+  }
+  &__text {
+    @include mixins.font(500, 1.05rem);
+    padding: 0 5%;
+    margin: 0.4rem 0;
+  }
+  &__image {
+    height: 220px;
+    width: 170px;
+    border-radius: 10%;
+    box-shadow: 0 10px 30px colors.$shadow-dark;
+  }
+}
