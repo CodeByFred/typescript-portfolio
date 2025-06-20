@@ -1,5 +1,5 @@
 import classes from "./HomeSection.module.scss";
-import SectionHeading from "../SectionHeading/SectionHeading";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const HomeSection = () => {
   return (

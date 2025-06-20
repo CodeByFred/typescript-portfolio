@@ -6,7 +6,6 @@
   background-color: colors.$blue-navy;
   grid-area: sidenav;
   @include mixins.flex(column, space-between, center);
-  // height: 100%;
 }
 .nav {
   align-self: center;
@@ -14,24 +13,21 @@
   position: fixed;
   @include mixins.flex(column, space-between, center);
 
-  &__container {
+  .container {
     width: 100%;
     margin-top: -20%;
-    // height: fit-content;
     justify-self: center;
     @include mixins.flex(column, $align: center);
 
-    &--page-links {
+    .page_links {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include mixins.flex(column, center, center);
       margin-bottom: 1%;
     }
   }
 
-  &__link-page {
+  .page_link {
     margin: 2% 0;
     width: 95%;
     padding: 5% 10%;

@@ -1,19 +1,19 @@
 import "./App.scss";
-import AboutSection from "./components/AboutSection/AboutSection";
-import ContactSection from "./components/ContactSection/ContactSection";
-import HomeSection from "./components/HomeSection/HomeSection";
-import ProjectContainer from "./components/ProjectContainer/ProjectContainer";
-import SideNav from "./components/SideNav/SideNav";
-import SkillSection from "./components/SkillSection/SkillSection";
+import Sidebar from "./components/Sidebar/Sidebar";
+import HomeSection from "./sections/HomeSection/HomeSection";
+import SkillSection from "./sections/SkillSection/SkillSection";
+import AboutSection from "./sections/AboutSection/AboutSection";
+import ProjectSection from "./sections/ProjectSection/ProjectSection";
+import ContactSection from "./sections/ContactSection/ContactSection";
 
 function App() {
   return (
     <main>
-      <SideNav />
+      <Sidebar />
       <HomeSection />
       <SkillSection />
       <AboutSection />
-      <ProjectContainer />
+      <ProjectSection />
       <ContactSection />
     </main>
   );

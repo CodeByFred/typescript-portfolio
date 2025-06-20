@@ -1,5 +1,5 @@
-import SectionHeading from "../SectionHeading/SectionHeading";
 import classes from "./SkillSection.module.scss";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const SkillSection = () => {
   return (

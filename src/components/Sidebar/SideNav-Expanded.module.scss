@@ -1,0 +1,80 @@
+@use "../../styles/colors";
+@use "../../styles/mixins";
+
+.expanded {
+  i {
+    margin-left: 15px;
+  }
+
+  .nav {
+    .open_button {
+      display: none;
+    }
+    .close_button {
+      align-self: flex-end;
+      margin-top: 10px;
+      margin-right: 10px;
+      color: colors.$white-ish;
+      font-size: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__info {
+      margin-left: 15px;
+    }
+    &__icon {
+      height: 35px;
+      width: 35px;
+    }
+    .footer {
+      @include mixins.font(400, 0.65rem, colors.$white-ish);
+    }
+    &__box {
+      width: 50%;
+      margin: 5% 0;
+      display: flex;
+      position: relative;
+    }
+    &__button--cv {
+      @include mixins.font(500, 1rem);
+      margin: 5% 0;
+      background-color: colors.$blue-navy;
+      color: colors.$white-ish;
+      border: solid 1px colors.$white-ish;
+      border-radius: 5px;
+      padding: 5px;
+      width: 65%;
+      &:hover {
+        background-color: colors.$blue;
+        color: colors.$blue-navy;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  #linkedin--dark {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #github {
+    position: absolute;
+    right: 0;
+  }
+
+  #github--dark {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

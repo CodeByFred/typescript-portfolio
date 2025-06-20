@@ -1,0 +1,28 @@
+@use "../../styles/colors";
+@use "../../styles/media-queries" as mq;
+@use "../../styles/mixins";
+
+.page_link {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  margin: 2% 0;
+  width: 95%;
+  padding: 5% 10%;
+  @include mixins.font(600, 1rem, colors.$white-ish);
+  text-decoration: none;
+  text-wrap: nowrap;
+  border-radius: 5px;
+  &.active {
+    background-color: colors.$blue;
+    text-shadow: none;
+  }
+  &:hover {
+    background-color: colors.$blue;
+    text-shadow: none;
+  }
+
+  span {
+    @include mixins.flex(row, $align: center);
+    margin-left: 1.5rem;
+  }
+}
