@@ -2,11 +2,6 @@
 @use "../../styles/media-queries";
 @use "../../styles/mixins";
 
-.sidenav {
-  background-color: colors.$blue-navy;
-  grid-area: sidenav;
-  @include mixins.flex(column, space-between, center);
-}
 .nav {
   align-self: center;
   height: 100%;
@@ -15,33 +10,41 @@
 
   .container {
     width: 100%;
-    margin-top: -20%;
     justify-self: center;
     @include mixins.flex(column, $align: center);
 
     .page_links {
-      width: 100%;
+      width: 95%;
       display: flex;
       @include mixins.flex(column, center, center);
       margin-bottom: 1%;
     }
   }
 
-  .page_link {
-    margin: 2% 0;
-    width: 95%;
-    padding: 5% 10%;
-    @include mixins.font(600, 1rem, colors.$white-ish);
-    text-decoration: none;
-    text-wrap: nowrap;
-    border-radius: 5px;
-    &.active {
-      background-color: colors.$blue;
-      text-shadow: none;
-    }
-    &:hover {
-      background-color: colors.$blue;
-      text-shadow: none;
-    }
+  .social {
+    width: 50%;
+    @include mixins.flex(row, space-around, center);
+    margin: 0.6rem 0 1.2rem 0;
+  }
+
+  .footer {
+    @include mixins.font(400, 0.65rem, colors.$white-ish);
+  }
+}
+
+.open {
+  width: 225px;
+}
+
+.close {
+  width: 60px;
+
+  .social {
+    @include mixins.flex(column, center, space-around);
+    row-gap: 0.8rem;
+  }
+
+  .footer {
+    color: transparent;
   }
 }

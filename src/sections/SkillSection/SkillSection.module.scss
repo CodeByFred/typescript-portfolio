@@ -2,71 +2,66 @@
 @use "../../styles/media-queries";
 @use "../../styles/mixins";
 
-.vl {
-  border: 0;
-  width: 1px;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0)
-  );
+.skills {
+  height: 50vh;
+  @include mixins.flex(column, flex-start, center);
 }
 
-.skills {
-  grid-area: skills;
-  height: 55vh;
-  @include mixins.flex(column, center, center);
+.container {
+  @include mixins.flex(row, center, flex-start);
+  margin: 1rem 0;
+  width: 90%;
+}
 
-  &__container {
-    height: 90%;
-    width: 80%;
-    @include mixins.flex($justify: center);
-    gap: 12%;
+.education_container {
+  @include mixins.flex(column, flex-start, center);
+  width: 50%;
+  h2 {
+    @include mixins.font(700, 1.4rem);
+    text-decoration: underline;
+    margin: 0;
   }
+}
 
-  &__heading {
-    @include mixins.font(700, 1.75rem);
-    font-style: italic;
-    margin-bottom: 3rem;
-    text-align: center;
+.tech_container {
+  text-align: center;
+  width: 50%;
 
-    &-icons {
-      @include mixins.font(600, 1.1rem);
-      margin: 0.75em;
-    }
+  h2 {
+    @include mixins.font(700, 1.4rem);
+    text-decoration: underline;
+    margin: 0;
   }
+}
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  &__icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-  }
-  &__icon {
-    width: 48px;
-    height: 48px;
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.icon {
+  width: 3.75rem;
+  img {
+    width: 3rem;
     transition: transform 0.2s ease;
     &:hover {
       transform: scale(1.1);
     }
   }
-
-  &__container-main {
-    @include mixins.flex(column);
+  p {
+    @include mixins.font(400, 0.9rem);
+    margin: 0.25rem 0;
   }
 }
 
 .education {
-  @include mixins.flex(column);
+  @include mixins.flex(column, center, center);
 }
-.skills__info {
+
+.university {
   @include mixins.flex(column, $align: center);
   h3 {
     margin: 2em 0 0.5em 0;

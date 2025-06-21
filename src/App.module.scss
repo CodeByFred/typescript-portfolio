@@ -1,0 +1,46 @@
+@use "./styles/colors";
+@use "./styles/media-queries" as mq;
+@use "./styles/mixins";
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to right, colors.$blue, colors.$blue-light);
+
+  &.open {
+    --sidebar-width: 225px;
+  }
+
+  &.close {
+    --sidebar-width: 60px;
+  }
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100%;
+  transition: width 0.3s ease;
+  z-index: 5;
+  background-color: colors.$gray-dark;
+  @include mixins.flex(column, space-between, center);
+
+  // .sidenav {
+  // background-color: colors.$blue-navy;
+  // @include mixins.flex(column, space-between, center);
+  // transition: width 0.3s ease;
+  // }
+}
+
+.content {
+  margin-left: var(--sidebar-width);
+  // flex: 1;
+  transition: margin-left 0.3s ease;
+
+  @include mq.pc {
+    padding: 1.25rem;
+  }
+}

@@ -24,3 +24,16 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin cv-button-style {
+  border: solid 1px colors.$white-ish;
+  width: 65%;
+
+  &:hover {
+    font-weight: 500;
+    background-color: colors.$blue;
+    color: colors.$blue-navy;
+    border: 1px solid transparent;
+    transform: translateY(-1px);
+  }
+}

@@ -5,76 +5,84 @@ import {
   faChevronLeft,
   faChevronRight,
   faEnvelope,
-  faGraduationCap,
+  // faGraduationCap,
   faHouse,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import Button from "../Button/Button";
 import SidebarLink from "../SidebarLink/SidebarLink";
+import SocialMediaLink from "../SocialMediaLink/SocialMediaLink";
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+type SideBarProps = {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  activeSection: string;
+};
 
+const Sidebar = ({ isOpen, setIsOpen, activeSection }: SideBarProps) => {
   return (
-    <aside className={classes.sidenav}>
-      <nav className={`${classes.nav} `}>
-        <Button variant="transparent">
-          <a className={classes.open_button} onClick={() => setIsOpen((prev) => !prev)}>
-            {isOpen ? (
-              <FontAwesomeIcon icon={faChevronLeft} />
-            ) : (
-              <FontAwesomeIcon icon={faChevronRight} />
-            )}
-          </a>
-        </Button>
-
-        <div className={classes.container}>
-          <div className={classes.page_links}>
-            <SidebarLink href="home" icon={faHouse} label="Home" />
-            <SidebarLink href="about" icon={faUser} label="About Me" />
-            <SidebarLink href="skill" icon={faGraduationCap} label="Skillset" />
-            <SidebarLink href="project" icon={faBriefcase} label="Projects" />
-            <SidebarLink href="contact" icon={faEnvelope} label="Contact Me" />
-          </div>
-          <div className={classes.nav_box}>
-            {/* <a
-              className="nav__link-external"
-              href="https://www.linkedin.com/in/frederick-jack-599b3537/"
-            >
-              <img
-                class="nav__icon"
-                id="linkedin"
-                src="./assets/icons/LinkedIn.svg"
-                alt="linkedin"
-              />
-              <img
-                class="nav__icon"
-                id="linkedin--dark"
-                src="./assets/icons/LinkedIn-Dark.svg"
-                alt="linkedin-light"
-              />
-            </a>
-            <a class="nav__link-external" href="https://github.com/CodeByFred">
-              <img
-                class="nav__icon"
-                id="github"
-                src="./assets/icons/Github-Light.svg"
-                alt="github"
-              />
-              <img
-                class="nav__icon"
-                id="github--dark"
-                src="./assets/icons/Github-Dark.svg"
-                alt="github-dark"
-              />
-            </a> */}
-          </div>
-          <button>View My CV</button>
+    <nav className={`${classes.nav} ${isOpen ? classes.open : classes.close}`}>
+      <Button variant="icon" onClick={() => setIsOpen((prev) => !prev)}>
+        {isOpen ? (
+          <FontAwesomeIcon icon={faChevronLeft} />
+        ) : (
+          <FontAwesomeIcon icon={faChevronRight} />
+        )}
+      </Button>
+      <div className={classes.container}>
+        <div className={classes.page_links}>
+          <SidebarLink
+            href="home"
+            icon={faHouse}
+            label="Home"
+            isActive={activeSection === "home"}
+            isOpen={isOpen}
+          />
+          <SidebarLink
+            href="about"
+            icon={faUser}
+            label="About Me"
+            isActive={activeSection === "about"}
+            isOpen={isOpen}
+          />
+          {/* <SidebarLink
+            href="skill"
+            icon={faGraduationCap}
+            label="Skillset"
+            isActive={activeSection === "skill"}
+            isOpen={isOpen}
+          /> */}
+          <SidebarLink
+            href="project"
+            icon={faBriefcase}
+            label="Projects"
+            isActive={activeSection === "project"}
+            isOpen={isOpen}
+          />
+          <SidebarLink
+            href="contact"
+            icon={faEnvelope}
+            label="Contact Me"
+            isActive={activeSection === "contact"}
+            isOpen={isOpen}
+          />
         </div>
-        <p className={classes.footer}>© 2025 | CodeByFred | All rights reserved</p>
-      </nav>
-    </aside>
+        <div className={classes.social}>
+          <SocialMediaLink
+            href="https://www.linkedin.com/in/frederick-jack-599b3537/"
+            imgLight="https://firebasestorage.googleapis.com/v0/b/fredjackportfolio.firebasestorage.app/o/LinkedIn.svg?alt=media&token=dc230b1a-2e93-4c5d-9b54-7647d998925c"
+            imgDark="https://firebasestorage.googleapis.com/v0/b/fredjackportfolio.firebasestorage.app/o/LinkedIn-Dark.svg?alt=media&token=ebee8e6c-af15-4af0-8dd0-d2f0d298bf7e"
+          />
+          <SocialMediaLink
+            href="https://github.com/CodeByFred"
+            imgLight="https://firebasestorage.googleapis.com/v0/b/fredjackportfolio.firebasestorage.app/o/Github-Light.svg?alt=media&token=a916943d-e487-4d65-b59e-567975352c8d"
+            imgDark="https://firebasestorage.googleapis.com/v0/b/fredjackportfolio.firebasestorage.app/o/Github-Dark.svg?alt=media&token=f3e4278d-d72c-47d0-ae27-58db19811426"
+          />
+        </div>
+        <Button variant={isOpen ? "cv" : "cv_closed"}>View My CV</Button>
+      </div>
+      <p className={classes.footer}>© 2025 | CodeByFred | All rights reserved</p>
+    </nav>
   );
 };
 export default Sidebar;

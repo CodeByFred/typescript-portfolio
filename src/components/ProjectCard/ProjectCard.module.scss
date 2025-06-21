@@ -1,0 +1,61 @@
+@use "../../styles/colors";
+@use "../../styles/media-queries";
+@use "../../styles/mixins";
+
+.card {
+  p {
+    @include mixins.font(400, 0.75rem, colors.$white-ish);
+    margin: 0.25rem 0;
+  }
+  justify-self: center;
+  background-color: colors.$blue-navy;
+  height: 425px;
+  width: 100%;
+  width: 325px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px colors.$shadow-dark;
+  overflow: hidden;
+
+  .image {
+    height: 45%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .body {
+    @include mixins.flex(column, flex-start, center);
+    height: 55%;
+  }
+
+  .title {
+    @include mixins.font-caveat(500, 1.4rem);
+    color: colors.$white-ish;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .text {
+    @include mixins.font(400, 0.8rem, colors.$white-ish);
+    text-align: center;
+    margin: 0 10px 10px 10px;
+  }
+  .tool_container {
+    @include mixins.flex($justify: center);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tool {
+    width: 2rem;
+  }
+
+  .git_container {
+    @include mixins.flex($justify: center);
+    gap: 1rem;
+  }
+
+  .git {
+    width: 2rem;
+  }
+}

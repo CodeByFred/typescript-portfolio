@@ -4,11 +4,13 @@
 .button {
   padding: 1rem 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 0.35rem;
   cursor: pointer;
   @include mixins.font(1rem, 500);
   color: white;
   transition: transform;
+  background-color: transparent;
 
   &:hover {
     transform: scale(1.05);
@@ -21,7 +23,30 @@
   }
 }
 
-.transparent {
-  background-color: transparent;
+.fill {
+  font-weight: 600;
+  padding: 0.75rem;
+  background-color: colors.$blue;
+  &:hover {
+    background-color: colors.$blue-navy;
+    transform: translateY(-1px);
+  }
+  span {
+    margin-left: 1rem;
+  }
+}
+
+.icon {
   font-size: 2rem;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem -6rem 0;
+}
+
+.cv {
+  @include mixins.cv-button-style;
+}
+
+.cv_closed {
+  @include mixins.cv-button-style;
+  font-size: 0.5rem;
 }

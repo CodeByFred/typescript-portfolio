@@ -1,1 +1,8 @@
+@use "./styles/colors";
 @import "../node_modules/modern-normalize/modern-normalize.css";
+
+#scroller {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-color: colors.$blue-navy colors.$white-ish;
+}

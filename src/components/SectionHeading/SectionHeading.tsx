@@ -1,7 +1,7 @@
 import classes from "./SectionHeading.module.scss";
 
 type HeadingProps = {
-  children: string;
+  children: React.ReactNode;
 };
 
 const SectionHeading = ({ children }: HeadingProps) => {

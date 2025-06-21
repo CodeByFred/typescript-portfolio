@@ -5,24 +5,29 @@
 .page_link {
   display: grid;
   grid-template-columns: 2rem 1fr;
-  margin: 2% 0;
+  margin: 0.25rem 0;
   width: 95%;
-  padding: 5% 10%;
+  padding: 0.6rem 1rem;
   @include mixins.font(600, 1rem, colors.$white-ish);
   text-decoration: none;
   text-wrap: nowrap;
   border-radius: 5px;
-  &.active {
-    background-color: colors.$blue;
-    text-shadow: none;
-  }
   &:hover {
     background-color: colors.$blue;
     text-shadow: none;
   }
-
   span {
     @include mixins.flex(row, $align: center);
     margin-left: 1.5rem;
   }
+}
+
+.active {
+  background-color: colors.$blue;
+  text-shadow: none;
+}
+
+.close {
+  @include mixins.flex(row, center, center);
+  font-size: 1.2rem;
 }
