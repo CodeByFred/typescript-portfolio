@@ -1,48 +1,64 @@
 @use "../../styles/colors";
-@use "../../styles/media-queries";
+@use "../../styles/media-queries" as mq;
 @use "../../styles/mixins";
 
 .skills {
-  height: 50vh;
-  @include mixins.flex(column, flex-start, center);
+  height: auto;
+  @include mq.pc {
+    height: 50vh;
+    @include mixins.flex(column, flex-start, center);
+  }
 }
-
 .container {
-  @include mixins.flex(row, center, flex-start);
-  margin: 1rem 0;
-  width: 90%;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq.pc {
+    @include mixins.flex(row, center, flex-start);
+    margin: 1rem 0;
+    width: 90%;
+  }
 }
 
 .education_container {
   @include mixins.flex(column, flex-start, center);
-  width: 50%;
+  width: 100%;
   h2 {
     @include mixins.font(700, 1.4rem);
     text-decoration: underline;
+    margin-bottom: 0;
+  }
+  @include mq.pc {
+    width: 50%;
     margin: 0;
   }
 }
 
 .tech_container {
-  text-align: center;
-  width: 50%;
-
+  @include mixins.flex(column, flex-start, center);
+  width: 100%;
+  margin-top: 3rem;
   h2 {
     @include mixins.font(700, 1.4rem);
     text-decoration: underline;
+    margin-bottom: 0;
+  }
+  @include mq.pc {
     margin: 0;
   }
 }
 
 .icons {
-  display: flex;
+  @include mixins.flex(row, center, center);
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
+  @include mq.pc {
+  }
 }
 
 .icon {
+  @include mixins.flex(column, center, center);
   width: 3.75rem;
   img {
     width: 3rem;
@@ -71,5 +87,15 @@
   p {
     margin: 0;
     @include mixins.font(400, 0.9rem);
+  }
+  @include mq.pc {
+  }
+
+  h3 {
+    margin: 2em 0 0.5em 0;
+  }
+
+  p {
+    margin: 0;
   }
 }

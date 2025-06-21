@@ -1,5 +1,5 @@
 @use "../../styles/colors";
-@use "../../styles/media-queries";
+@use "../../styles/media-queries" as mq;
 @use "../../styles/mixins";
 
 .card {
@@ -10,11 +10,14 @@
   justify-self: center;
   background-color: colors.$blue-navy;
   height: 425px;
-  width: 100%;
-  width: 325px;
+  width: 95%;
   border-radius: 8px;
   box-shadow: 0 10px 30px colors.$shadow-dark;
   overflow: hidden;
+
+  @include mq.pc {
+    width: 325px;
+  }
 
   .image {
     height: 45%;
@@ -47,7 +50,11 @@
   }
 
   .tool {
-    width: 2rem;
+    width: 1.75rem;
+
+    @include mq.pc {
+      width: 2rem;
+    }
   }
 
   .git_container {
@@ -56,6 +63,9 @@
   }
 
   .git {
-    width: 2rem;
+    width: 1.75rem;
+    @include mq.pc {
+      width: 2rem;
+    }
   }
 }

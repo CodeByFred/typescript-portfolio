@@ -8,10 +8,13 @@
 }
 
 .container {
-  margin: 2rem;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  column-gap: 3rem;
-  row-gap: 3rem;
+  row-gap: 2rem;
+  margin-bottom: 2rem;
+  @include mq.pc {
+    margin: 2rem;
+    row-gap: 3rem;
+  }
 }

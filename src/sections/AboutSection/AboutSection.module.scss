@@ -1,28 +1,39 @@
 @use "../../styles/colors";
+@use "../../styles/media-queries" as mq;
 @use "../../styles/mixins";
 
 .about {
   @include mixins.flex(column, flex-start, center);
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .container {
-  @include mixins.flex(row, center, flex-start);
-  height: 70%;
-  width: 90%;
-  padding: 0 2rem;
-  flex-wrap: wrap;
+  @include mixins.flex(column, center, center);
+  height: auto;
+  padding: 1rem;
+
+  @include mq.pc {
+    @include mixins.flex(row, center, flex-start);
+    height: 70%;
+    width: 90%;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+  }
 }
 
 .image {
+  margin-bottom: 1rem;
   width: 150px;
   border-radius: 10%;
   box-shadow: 0 10px 30px colors.$shadow-dark;
 }
 
 .text_container {
-  width: 60%;
-  @include mixins.flex(column, $justify: center);
+  width: 90%;
+  @include mq.pc {
+    width: 60%;
+    @include mixins.flex(column, $justify: center);
+  }
 }
 
 .text {

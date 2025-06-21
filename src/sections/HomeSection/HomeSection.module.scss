@@ -8,14 +8,17 @@
 
   .container {
     @include mixins.flex(column, center, flex-start);
+    margin-left: 2rem;
     @include mq.pc {
-      height: 90%;
-      width: 50%;
-      margin-left: 8%;
+      @include mq.pc {
+        height: 90%;
+        width: 50%;
+        margin-left: 8%;
+      }
     }
   }
   img {
-    width: 100%;
+    width: 90%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     @include mq.pc {
       height: 55%;
