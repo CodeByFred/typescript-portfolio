@@ -1,4 +1,5 @@
 @use "./colors";
+@use "./media-queries" as mq;
 
 @mixin font($font-weight, $font-size, $color: colors.$text-main) {
   font-family: "Montserrat", sans-serif;
@@ -35,5 +36,15 @@
     color: colors.$blue-navy;
     border: 1px solid transparent;
     transform: translateY(-1px);
+  }
+}
+
+@mixin third-column {
+  @include flex(column, flex-start, center);
+  width: 95%;
+  margin: 2.5rem 0;
+
+  @include mq.pc {
+    width: 33%;
   }
 }

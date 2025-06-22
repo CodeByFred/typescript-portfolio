@@ -11,7 +11,7 @@ import SectionDivider from "./components/SectionDivider/SectionDivider";
 import { ToolsProvider } from "./context/ToolsProvider";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {

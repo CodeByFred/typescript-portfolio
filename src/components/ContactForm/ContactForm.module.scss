@@ -1,5 +1,5 @@
 @use "../../styles/colors";
-@use "../../styles/media-queries";
+@use "../../styles/media-queries" as mq;
 @use "../../styles/mixins";
 
 .form {
@@ -42,5 +42,13 @@
     & textarea {
       resize: none;
     }
+  }
+}
+
+.text {
+  margin: 0.5rem;
+  @include mixins.font(500, 0.7rem);
+  @include mq.pc {
+    font-size: 1rem;
   }
 }

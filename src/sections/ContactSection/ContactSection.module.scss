@@ -15,10 +15,3 @@
     width: 55%;
   }
 }
-
-.text {
-  @include mixins.font(500, 0.7rem);
-  @include mq.pc {
-    font-size: 1rem;
-  }
-}

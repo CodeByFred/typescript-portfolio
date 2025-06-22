@@ -1,6 +1,8 @@
 import classes from "./SkillSection.module.scss";
 // import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { useTools } from "../../context/ToolsContext";
+import Subheading from "../../components/Subheading/Subheading";
+import TextHeading from "../../components/TextHeading/TextHeading";
 
 const SkillSection = () => {
   const toolsMap = useTools();
@@ -9,24 +11,23 @@ const SkillSection = () => {
     <section className={classes.skills} /*id="skill"*/>
       {/* <SectionHeading>Skillset</SectionHeading> */}
       <div className={classes.container}>
-        <div className={classes.education_container}>
-          <h2>Education</h2>
+        <div className={classes.third_container}>
+          <Subheading>Education</Subheading>
           <div className={classes.education}>
-            <div className={classes.university}>
-              <h3>Macquarie University</h3>
+            <div className={classes.group}>
+              <TextHeading>Macquarie University</TextHeading>
               <p>Bachelor of Engineering (Honours)</p>
               <p>Software Engineering</p>
             </div>
-            <div className={classes.university}>
-              <h3>University of Texas at Arlington</h3>
+            <div className={classes.group}>
+              <TextHeading>University of Texas at Arlington</TextHeading>
               <p>Bachelor of Arts (B.A)</p>
               <p>Psychology</p>
             </div>
           </div>
         </div>
-
-        <div className={classes.tech_container}>
-          <h2>Tech Stack</h2>
+        <div className={classes.third_container}>
+          <Subheading>Tech Stack</Subheading>
           <div className={classes.icons}>
             {Array.from(toolsMap.values()).map((tool) => (
               <div key={tool.id} className={classes.icon}>
@@ -34,6 +35,18 @@ const SkillSection = () => {
                 <p>{tool.title}</p>
               </div>
             ))}
+          </div>
+        </div>
+        <div className={classes.third_container}>
+          <Subheading>Certifications</Subheading>
+          <div className={classes.group}>
+            <TextHeading>_nology</TextHeading>
+            <p>Pathway to Tech Program</p>
+            <p>Full Stack Engineer Program</p>
+          </div>
+          <div className={classes.group}>
+            <TextHeading>AWS</TextHeading>
+            <p>Certified Cloud Practitioner</p>
           </div>
         </div>
       </div>

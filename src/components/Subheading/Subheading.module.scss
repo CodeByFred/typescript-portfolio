@@ -1,0 +1,8 @@
+// @use "../../styles/media-queries" as mq;
+@use "../../styles/mixins";
+
+.heading {
+  @include mixins.font(700, 1.4rem);
+  text-decoration: underline;
+  margin-bottom: 0;
+}

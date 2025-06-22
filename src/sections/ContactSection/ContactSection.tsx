@@ -7,9 +7,6 @@ const ContactSection = () => {
     <section className={classes.contact} id="contact">
       <SectionHeading>Get in Touch</SectionHeading>
       <div className={classes.container}>
-        <p className={classes.text}>
-          I'd love to hear from you. Fill out the form and I'll reply soon!
-        </p>
         <ContactForm />
       </div>
     </section>

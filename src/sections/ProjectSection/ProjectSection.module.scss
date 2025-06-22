@@ -8,13 +8,12 @@
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   row-gap: 2rem;
   margin-bottom: 2rem;
   @include mq.pc {
-    margin: 2rem;
-    row-gap: 3rem;
+    width: 90%;
   }
 }

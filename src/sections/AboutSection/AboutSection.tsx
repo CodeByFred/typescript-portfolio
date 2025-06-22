@@ -13,10 +13,10 @@ const AboutSection = () => {
         />
         <div className={classes.text_container}>
           <p className={classes.text}>
-            My career journey started with an interest in human behaviour, which led me to
-            pursue a psychology degree in the United States. That foundation sharpened my
-            communication skills and gave me a unique lens for understanding people — a
-            perspective I now bring into tech.
+            My career started with a curiosity about human behaviour, which led me to
+            study psychology in the US. That experience sharpened my communication skills
+            and gave me a unique way of understanding people, something I now bring into
+            the tech world.
           </p>
 
           <p className={classes.text}>
@@ -27,8 +27,8 @@ const AboutSection = () => {
           </p>
 
           <p className={classes.text}>
-            Now, I mix behavioural insight with technical skills to build intuitive,
-            human-centered solutions that aim to make a difference.
+            These days, I’m blending behavioural insights with technical skills to build
+            intuitive, human-focused solutions that aim to make a difference.
           </p>
         </div>
       </div>

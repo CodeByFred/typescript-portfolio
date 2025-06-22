@@ -11,41 +11,46 @@ import Button from "../Button/Button";
 import { useForm } from "@formspree/react";
 
 const ContactForm = () => {
-  const [state, handleSubmit] = useForm("https://formspree.io/f/xvgkyqov");
+  const [state, handleSubmit] = useForm("xvgkyqov");
 
   if (state.succeeded) {
-    return <div>Thank you for contacting me!</div>;
+    return <p className={classes.text}>Thank you for contacting me!</p>;
   }
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit} method="POST">
-      <fieldset className={classes.field}>
-        <label htmlFor="name">
-          <FontAwesomeIcon icon={faUser} /> Name
-        </label>
-        <input type="text" id="name" name="name" required autoComplete="off" />
+    <>
+      <p className={classes.text}>
+        I'd love to hear from you. Fill out the form and I'll reply soon!
+      </p>
+      <form className={classes.form} onSubmit={handleSubmit} method="POST">
+        <fieldset className={classes.field}>
+          <label htmlFor="name">
+            <FontAwesomeIcon icon={faUser} /> Name
+          </label>
+          <input type="text" id="name" name="name" required autoComplete="off" />
 
-        <label htmlFor="email">
-          <FontAwesomeIcon icon={faEnvelope} /> Email
-        </label>
-        <input type="email" id="email" name="email" required autoComplete="off" />
+          <label htmlFor="email">
+            <FontAwesomeIcon icon={faEnvelope} /> Email
+          </label>
+          <input type="email" id="email" name="email" required autoComplete="off" />
 
-        <label htmlFor="subject">
-          <FontAwesomeIcon icon={faPenToSquare} /> Subject
-        </label>
-        <input type="text" id="subject" name="subject" required autoComplete="off" />
+          <label htmlFor="subject">
+            <FontAwesomeIcon icon={faPenToSquare} /> Subject
+          </label>
+          <input type="text" id="subject" name="subject" required autoComplete="off" />
 
-        <label htmlFor="msg">
-          <FontAwesomeIcon icon={faCommentDots} /> Message
-        </label>
-        <textarea id="msg" name="message" rows={8} required autoComplete="off" />
+          <label htmlFor="msg">
+            <FontAwesomeIcon icon={faCommentDots} /> Message
+          </label>
+          <textarea id="msg" name="message" rows={8} required autoComplete="off" />
 
-        <Button variant="fill" type="submit" disabled={state.submitting}>
-          <FontAwesomeIcon icon={faPaperPlane} />
-          <span>Send Message</span>
-        </Button>
-      </fieldset>
-    </form>
+          <Button variant="fill" type="submit" disabled={state.submitting}>
+            <FontAwesomeIcon icon={faPaperPlane} />
+            <span>Send Message</span>
+          </Button>
+        </fieldset>
+      </form>
+    </>
   );
 };
 
