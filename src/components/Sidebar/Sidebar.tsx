@@ -12,6 +12,7 @@ import {
 import Button from "../Button/Button";
 import SidebarLink from "../SidebarLink/SidebarLink";
 import SocialMediaLink from "../SocialMediaLink/SocialMediaLink";
+import { useMediaQuery } from "use-media-query-react";
 
 type SideBarProps = {
   isOpen: boolean;
@@ -20,15 +21,23 @@ type SideBarProps = {
 };
 
 const Sidebar = ({ isOpen, setIsOpen, activeSection }: SideBarProps) => {
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   return (
     <nav className={`${classes.nav} ${isOpen ? classes.open : classes.close}`}>
-      <Button variant="icon" onClick={() => setIsOpen((prev) => !prev)}>
-        {isOpen ? (
-          <FontAwesomeIcon icon={faChevronLeft} />
-        ) : (
-          <FontAwesomeIcon icon={faChevronRight} />
-        )}
-      </Button>
+      {
+        <Button
+          variant="icon"
+          onClick={() => setIsOpen((prev) => !prev)}
+          style={{ visibility: isMobile ? "hidden" : "visible" }}
+        >
+          {isOpen ? (
+            <FontAwesomeIcon icon={faChevronLeft} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronRight} />
+          )}
+        </Button>
+      }
       <div className={classes.container}>
         <div className={classes.page_links}>
           <SidebarLink

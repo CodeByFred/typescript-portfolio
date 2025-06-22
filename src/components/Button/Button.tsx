@@ -7,6 +7,7 @@ type ButtonProps = {
   variant: "fill" | "cv" | "cv_closed" | "icon";
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   disabled?: boolean;
+  style?: React.CSSProperties;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   variant,
   type = "button",
   disabled,
+  style,
 }) => {
   return (
     <button
@@ -22,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       type={type}
       disabled={disabled}
+      style={style}
     >
       {children}
     </button>
